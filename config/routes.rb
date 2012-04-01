@@ -1,5 +1,10 @@
 Localfalcon::Application.routes.draw do
-  get "pages/home"
+  match '/pass-on' :to => 'pages#pass-on'
+  match '/metrics' :to => 'pages#metrics'
+  match '/contacts' :to => 'pages#contacts'
+  match '/schedule' :to => 'pages#schedule'
+
+  root :to => 'pages#home'
 
   resources :blog_posts
 
