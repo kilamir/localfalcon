@@ -1,8 +1,8 @@
 Localfalcon::Application.routes.draw do
-  match '/pass-on' :to => 'pages#pass-on'
-  match '/metrics' :to => 'pages#metrics'
-  match '/contacts' :to => 'pages#contacts'
-  match '/schedule' :to => 'pages#schedule'
+  match '/pass-on', :to => 'pages#pass-on'
+  match '/metrics', :to => 'pages#metrics'
+  match '/contacts', :to => 'pages#contacts'
+  match '/schedule', :to => 'pages#schedule'
 
   root :to => 'pages#home'
 
