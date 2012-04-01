@@ -10,6 +10,7 @@ end
 
 group :development, :test do
   gem 'mysql2'
+  gem 'annotate', '2.4.1.beta1'
 end
 
 # Gems used only for assets and not required
