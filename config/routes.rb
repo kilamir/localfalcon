@@ -6,10 +6,6 @@ Localfalcon::Application.routes.draw do
 
   root :to => 'pages#home'
 
-  resources :blog_posts
-
-  resources :users
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
