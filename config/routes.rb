@@ -1,4 +1,6 @@
 Localfalcon::Application.routes.draw do
+  get "pages/home"
+
   resources :blog_posts
 
   resources :users
