@@ -21,12 +21,22 @@
 #
 
 class User < ActiveRecord::Base
-  validates :firstname, :presence   => true
-                        :length     => { :maximum => 30 }
-  validates :lastname,  :presence   => true
-                        :length     => { :maximum => 30 }
-  validates :email,     :presence   => true
-                        :format     => { :with => email_regex }
-                        :uniqueness => { :case_sensitive => false }
-  validates :password,  :presence   => true
+  attr_accessible :firstname, :lastname, :email, :password,
+                  :password_confirmation, :work_ph_num, :cell_ph_num, 
+                  :fax_num, :street_address, :city, :state, :zipcode
+  has_secure_password 
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :firstname, presence:     true,
+                        length:       { maximum: 30 }
+  validates :lastname,  presence:     true,
+                        length:       { maximum: 30 }
+  validates :email,     presence:     true,
+                        format:       { with: VALID_EMAIL_REGEX },
+                        uniqueness:   { case_sensitive: false }
+  validates :password,  presence:     true,
+                        length:       { within: 6..40 }
+  validates :password_confirmation, presence: true
+
 end

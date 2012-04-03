@@ -1,10 +1,10 @@
 module ApplicationHelper
-  def title 
+  def full_title(page_title)
     base_title = "Local Falcon"
-    if @title.nil?
-        base_title
-    else 
-        "#{base_title} | #{@title}"
+    if page_title.empty?
+      base_title
+    else
+      "#{base_title} | #{page_title}"
     end
   end
 end

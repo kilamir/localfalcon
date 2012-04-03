@@ -1,6 +1,8 @@
-<h1>Home</h1>
-<p>This is the new homepage for the Local Falcon.</p>
-
-<p>Sign up to get access to the site.</p>
-<%= link_to "Sign up now!", 'signup_path', :class => "signup_button round" %>
-
+<%= provide(:title, 'Home') %>
+<div class="center hero-unit">
+  <h1>Welcome to the Local Falcon</h1>
+  <h2>This is the new homepage for the Local Falcon.<br>
+      Sign up to get access to the site.
+  </h2>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+</div>

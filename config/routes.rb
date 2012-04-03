@@ -1,13 +1,13 @@
 Localfalcon::Application.routes.draw do
-  get "users/new"
+  resources :users
 
-  match '/pass-on',   :to => 'pages#pass-on'
-  match '/metrics',   :to => 'pages#metrics'
-  match '/contacts',  :to => 'pages#contacts'
-  match '/schedule',  :to => 'pages#schedule'
-  match '/signup',    :to => 'users#new'
+  match '/pass-on',   to:  'pages#pass-on'
+  match '/metrics',   to:  'pages#metrics'
+  match '/contacts',  to:  'pages#contacts'
+  match '/schedule',  to:  'pages#schedule'
+  match '/signup',    to:  'users#new'
 
-  root :to => 'pages#home'
+  root                to:  'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
