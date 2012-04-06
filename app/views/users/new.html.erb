@@ -3,25 +3,19 @@
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :firstname %>
-      <%= f.text_field :firstname %>
-
-      <%= f.label :lastname %>
-      <%= f.text_field :lastname %>
-    
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account", :class => "btn btn-large btn-primary" %>
+    <%= render 'shared/error_messages', :object => @user %>
+    <%= semantic_form_for @user do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :firstname, :label => "First Name" %>
+        <%= f.input :lastname, :label => "Last Name" %>  
+        <%= f.input :email, :label => "E-mail" %>
+        <%= f.input :password, :label => "Password" %>
+        <%= f.input :password_confirmation, :label => "Password Confirmation" %>
+      <% end %>
+      <%= f.actions do %>
+        <%=f.action :submit, :label => "Create account", 
+          :button_html => { :class => "btn btn-large btn-primary" } %>
+      <% end %>
     <% end %>
   </div>
 </div>

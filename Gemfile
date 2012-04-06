@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
-gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'nokogiri'
+gem 'formtastic-bootstrap'
+gem 'faker', '1.0.1'
+gem 'bootstrap-will_paginate'
 #gem 'gravatar_image_tag', '1.0.0.pre2'
 
 # Bundle edge Rails instead:
@@ -26,6 +29,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass', '2.0.0'
 end
 
 gem 'jquery-rails'

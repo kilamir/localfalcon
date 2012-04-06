@@ -1,11 +1,14 @@
 Localfalcon::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   match '/pass-on',   to:  'pages#pass-on'
   match '/metrics',   to:  'pages#metrics'
   match '/contacts',  to:  'pages#contacts'
   match '/schedule',  to:  'pages#schedule'
   match '/signup',    to:  'users#new'
+  match '/signin',    to:  'sessions#new'
+  match '/signout',   to:  'sessions#destroy', via: :delete
 
   root                to:  'pages#home'
 

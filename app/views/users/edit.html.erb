@@ -1,0 +1,30 @@
+<%= provide(:title, "Edit User") %>
+<h1> Update your profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= render 'shared/error_messages', :object => @user %>
+    <%= semantic_form_for @user do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :firstname, :label => "First Name" %>
+        <%= f.input :lastname, :label => "Last Name" %>
+        <%= f.input :email, :label => "E-mail" %>
+        <%= f.input :password, :label => "Password" %>
+        <%= f.input :password_confirmation, :label => "Password Confirmation" %>
+        <%= f.input :work_ph_num, :label => "Work Phone Number" %>
+        <%= f.input :cell_ph_num, :label => "Cellphone Number" %>
+        <%= f.input :fax_num, :label => "Fax Number" %>
+        <%= f.input :street_address, :label => "Street Number" %>
+        <%= f.input :city, :label => "City" %>
+        <%= f.input :state, :label => "State" %>
+        <%= f.input :zipcode, :label => "Zipcode" %>
+      <% end %>
+      <%= f.actions do %>
+        <%= f.action :submit, :label => "Save changes",
+        :button_html => { :class => "btn btn-large btn-primary" } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
